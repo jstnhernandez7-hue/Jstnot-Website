@@ -1,0 +1,56 @@
+@import '@fontsource/inter/300.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ink text-text-primary font-sans antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  ::selection {
+    @apply bg-accent text-ink;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .container-site {
+    @apply mx-auto w-full max-w-7xl px-6 lg:px-12;
+  }
+
+  .section-pad {
+    @apply py-24 lg:py-32;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
